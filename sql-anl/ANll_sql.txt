@@ -1,0 +1,77 @@
+
+select department_id as department_identification,department_name,manager_id,location_id from hr.Departments;
+
+SYNTAX for INNER Join
+select <column_names> from Table A INNER JOIN Table B ON A.Col =B.Col;
+
+select * from HR.departments d inner join hr.employees e 
+ON d.department_id = e.department_id;
+
+DISTINCT 
+select distinct(department_id) from employees; ---1
+select distinct(department_id) from employees1;
+
+create table employees1 as select * from employees where 1=2;
+insert into employees1 select * from employees where department_id < = 70;
+
+select E1.employee_id ,E1.department_id,E1.first_name from hr.employees E INNER JOIN hr.employees1 E1
+ON E.department_id = E1.department_id order by department_id asc;
+
+
+select * from hr.employees E 
+FULL OUTER JOIN hr.employees1 E1
+ON E.department_id = E1.department_id order by E.department_id asc;
+
+
+
+select E.employee_id,E.first_name,E.EMAIL,E.department_id from hr.employees E  LEFT OUTER JOIN hr.employees1 E1
+ON E.department_id = E1.department_id order by E.department_id desc;
+
+select E.employee_id,E.first_name,E.EMAIL,E.department_id from hr.employees E  RIGHT OUTER JOIN hr.employees1 E1
+ON E.department_id = E1.department_id order by E.department_id desc;
+
+
+select E.employee_id,E.first_name,E.EMAIL,E.department_id from hr.employees E  CROSS JOIN hr.employees1 E1;
+
+select count(1) from hr.employees E  CROSS JOIN hr.employees1 E1;
+
+SELECT last_name, department_name FROM employees CROSS JOIN departments.
+
+ORDER BY, Distinct, And ,OR , count(1), count(*) ,Group by 
+
+Count -
+
+select count(*) from employees;
+select count(1) from employees where department_id =50;
+
+select distinct(manager_id) from employees;
+
+
+select *  from employees where employee_id > 50 AND salary > 5000 AND job_id = 'IT_PROG';
+
+select *  from employees where salary between 3000 and 6000;
+
+select *  from employees where job_id IN ( 'IT_PROG' ,'SH_CLERK');
+
+select *  from employees where job_id = 'IT_PROG' OR job_id = 'Learnbay';
+
+select employee_id,first_name  from employees where first_name like '%is%';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+--TSQL Join Type
+
+-- SELECT from two tables
+SELECT * FROM Table1;
+SELECT * FROM Table2;
+
+--INNER Join
+SELECT * FROM Table1 t1 INNER JOIN Table2 t2 ON t1.fk = t2.id;
+
+---LEFT OUTER JOIN
+SELECT * FROM Table1 t1 LEFT OUTER JOIN Table2 t2 ON t1.fk = t2.id;
+
+--RIGHT OUTER JOIN
+SELECT * FROM Table1 t1 RIGHT OUTER JOIN Table2 t2 ON t1.fk = t2.id;
+
+--SEMI JOIN
+SELECT * FROM Table1 t1 WHERE EXISTS (SELECT 1 FROM Table2 t2 WHERE t1.fk = t2.id);
+
+--ANTI SEMI JOIN
+SELECT * FROM Table1 t1 WHERE NOT EXISTS (SELECT 1 FROM Table2 t2 WHERE t1.fk = t2.id; 
+
+--ANTI SEMI JOIN
+SELECT * FROM Table1 t1 WHERE NOT EXISTS (SELECT 1 FROM Table2 t2 WHERE t1.fk = t2.id;
+
+-- LEFT OUTER JOIN with exclusion (Replacement for a NOT IN)
+SELECT * FROM Table1 t1 LEFT OUTER JOIN Table2 t2 ON t1.fk = t2.id WHERE t2.id IS NULL;
+
+-- RIGHT OUTER JOIN with exclusion (Replacement for a NOT IN)
+SELECT * FROM Table1 t1 RIGHT OUTER JOIN Table2 t2 ON t1.fk = t2.id WHERE t1.fk is NULL;
+
+--FULL OUTER JOIN
+SELECT * FROM Table t1 FULL OUTER JOIN Table2 t2 ON t1.fk = t2.id;
+
+--CROSS JOIN, the Cartesian product
+SELECT * FROM Table1 t1 CROSS JOIN Table2 t2;
+
+--FULL OUTER JOIN WITH EXCLUSION
+SELECT * FROM Table1 t1 FULL OUTER JOIN Table2 t2 ON t1.fk=t2.id WHERE t1.fk = IS NULL OR t2.id IS NULL;
+
+--NON-EQUI INNER JOINT
+SELECT * FROM Table1 t1 INNER JOIN Table2 t2 ON t1.fk >= t2.id;
+

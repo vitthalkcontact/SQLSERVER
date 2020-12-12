@@ -1,0 +1,180 @@
+--SQL BASICS from Edureka
+
+--SQL: is a language used to communicate with database
+--Oracle SQL or MY SQL:  Database management system
+
+create database name_database;
+drop database name_database;
+
+--TABLE must have a name_database
+--Each entity or record are called as tuples
+--Features of entity are called attributes (name and data type)
+
+---Table constraints (To ensure data integrity constraaints are used)
+--1. CHECK_DEFAULT
+--2. FOREIGN_KEY
+--3. INDEX,
+--4. UNIQUE
+--5. PRIMARY_KEY
+--6. NOT_NULL
+
+-- constrained are decided during the creation of table.
+-- To change constraint is not possible. Only possible delete and create new table with new constraints
+
+-- In database two tables with the same name NOT EXISTS
+
+create table emp(
+id int not null auto_increment,
+ename varchar(20),
+address varchar(30),
+primary key(id)
+);
+
+drop table emp;
+
+-- Basic sql queries
+
+--SELECT query
+select * from emp;
+select col1, col2 from emp;
+
+
+create table student(
+studentid int not null auto_increment,
+fname varchar(20),
+lname varchar(20),
+address varchar(30),
+city varchar(30),
+marks int,
+primary key(studentid)
+);
+
+select * from student;
+select fname, lname from student;
+
+--where cluase (used for filter)
+
+
+select fname from student
+where city='Goa';
+
+-- AND OR NOT (used to add two or more conditions in where clause)
+select * from student
+where fname='Bharath' and lname='Singh';
+
+
+select * from student
+where fname='Bhuvi' or lname='Kumar';
+
+
+select * from student
+where not fname='Ashok';
+
+
+--Inset into
+insert into student (col1, col2, col3,...)
+VALUES(val1, val2, val3, ...);
+
+
+--aggregate functions (count, sum, avg, min, max etc) returns single value
+-- aggregate functions are NOT USED with where clause
+--- used with group by
+
+select count (student_id)
+from student;
+
+select AVG (Marks)
+from student;
+
+select sum (Marks)
+from student;
+
+select fname, lname, max(Marks)
+from student;
+
+--group by
+select count(student_id), city from student group by city;
+
+--HAVING (indtroduced because where key is not used with aggregate functions)
+
+select, fname, lname, marks, city
+from student
+where city = 'Delhi'
+group by city
+having marks>200;
+
+
+select fname, sum(marks)
+from student
+group by fname
+having sum(marks)>500;
+
+--order by
+select col1, col2, ....
+from table_name
+order by col1, col2, ....ASC|DESC
+
+select count(student_id), cityfrom student
+group by cityorder by count(sudent_id) desc;
+
+--NULL values
+select fname, lname
+from student
+where Marks IS NULL;
+
+
+select fname, lname
+from student
+where Marks IS NOT NULL;
+
+
+--update
+update table_name
+set fname = 'Robert', lname='Wills'
+where student_id=101;
+
+
+--delete
+delete from student
+where city='Mumbai';
+
+--IN operator (acts as multiple OR)
+select fname, lname from table_name
+where city in ('Mubai', 'Pune');
+
+--between operator
+select fname, lname from student
+where marks between 200 and 400;
+
+--Alliases in sql
+--column aliasing and table aliasing
+select fname as NAME from student;
+
+select t.fname, t.lname, t.student_id from student as t;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+DDL and Constraints
+https://www.tutorialspoint.com/sql_certificate/using_ddl_statements.htm
+https://www.oracle-dba-online.com/sql/oracle_sql_tutorial.htm
+https://www.oracle-dba-online.com/sql/oracle_data_definition_language.htm
+
+DML
+https://www.oracle-dba-online.com/sql/insert_update_delete_merge.htm
+
+DRL
+Operators
+https://docs.oracle.com/cd/A87860_01/doc/server.817/a85397/operator.htm
+
+DCL
+https://www.oracle-dba-online.com/sql/grant_and_revoke_privileges.htm
+
+Oracle Functions
+https://www.techonthenet.com/oracle/functions/index.php
